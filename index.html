@@ -1,51 +1,158 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de Informações Acadêmicas - UniProjeção</title>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-    <div class="cabeçalho">
-        <h1>Central de Informações Acadêmicas</h1>
-        <h2>Tudo o que você precisa saber sobre a faculdade em um só lugar.</h2>
-    </div>
     
-    <div class="corpo">
-        <p>Bem-vindo à Central de Informações Acadêmicas da UniProjeção!</p>
-        <p>Aqui você eancontrará todas as informações importantes sobre a faculdade, cursos, eventos e muito mais.</p>
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Seu CSS personalizado (opcional, para pequenos ajustes) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
 
-        <div class="avisos">
-            <h3>Avisos importantes</h3>
-            <p>Confira informações detalhadas sobre os cursos oferecidos pela faculdade.</p>
+    <!-- Cabeçalho -->
+    <header class="cabecalho-custom text-white text-center py-5 shadow-sm">
+        <div class="container py-4">
+            <h1 class="display-4 fw-bold mb-3 titulo-principal">Central de Informações Acadêmicas</h1>
+            <p class="lead mb-0 subtitulo">Tudo o que você precisa saber sobre o UniProjeção em um só lugar.</p>
+        </div>
+    </header>
 
+    <main class="container my-4">
+        
+        <!-- Aviso de Não Oficial -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="alert alert-secondary border-start border-4 border-dark shadow-sm" role="alert" style="border-left-color: #70869f !important;">
+                    <h5 class="alert-heading fw-bold">Olá, estudante!</h5>
+                    <p>Bem-vindo à Central de Informações Acadêmicas da UniProjeção!</p>
+                    <!-- LINHA ADICIONADA AQUI -->
+                    <p class="mb-2"><strong>As informações disponibilizadas neste site são referentes ao Campus Taguatinga.</strong></p>
+                    <hr>
+                    <p class="mb-0"><strong>Este site é não oficial e um projeto de extensão universitária</strong>, criado por estudantes para facilitar o seu dia a dia. Aqui você encontra de forma rápida e organizada os principais contatos, horários de atendimento, localização dos setores e avisos importantes da faculdade.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="conteúdo">
-            <h3>Contatos dos setores</h3>
-            <p>Confira os contatos dos principais setores da faculdade.</p>
+        <!-- Grid de Cards -->
+        <div class="row g-4">
+            
+            <!-- Contatos -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color: #70869f;">📞 Contatos dos setores</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><strong>Telefone/Whatsapp Geral:</strong> <a href="tel:6134513999" class="text-decoration-none">(61) 3451-3999</a></li>
+                            <li class="mb-2"><strong>WhatsApp SAP (Vestibular e Matrícula):</strong> <a href="tel:61992716064" class="text-decoration-none">(61) 99271-6064</a></li>
+                            <li class="mb-2"><strong>E-mail Geral:</strong> <a href="mailto:atendimento@projecao.br" class="text-decoration-none">atendimento@projecao.br</a></li>
+                            <li class="mb-2"><strong>Suporte EAD:</strong> <a href="mailto:atendimentoead@projecao.br" class="text-decoration-none">atendimentoead@projecao.br</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horários -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color: #70869f;">⏰ Horários de Atendimento</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><strong>Geral:</strong> Segunda a sexta, das 8h às 22h; Sábados, das 8h às 12h</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Localização -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color: #70869f;">📍 Localização dos setores</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><strong>Secretaria:</strong> Bloco A, Térreo.</li>
+                            <li class="mb-2"><strong>Coordenações:</strong> Bloco B, 2º Andar.</li>
+                            <li class="mb-2"><strong>Biblioteca:</strong> Prédio Central, 1º Andar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeão: Qual setor procurar? -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3" style="color: #70869f;">❓ Qual setor procurar?</h5>
+                        
+                        <div class="accordion" id="accordionSetores">
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed px-0 shadow-none bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                        Trancar ou destrancar disciplina
+                                    </button>
+                                </h2>
+                                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionSetores">
+                                    <div class="accordion-body px-0 text-muted">
+                                        Fale com a <strong>Secretaria Acadêmica</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed px-0 shadow-none bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                        Esqueci a senha do portal ou Wi-Fi
+                                    </button>
+                                </h2>
+                                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionSetores">
+                                    <div class="accordion-body px-0 text-muted">
+                                        Fale com o <strong>Suporte de TI</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 border-bottom">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed px-0 shadow-none bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                        Emitir boleto ou negociar débitos
+                                    </button>
+                                </h2>
+                                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionSetores">
+                                    <div class="accordion-body px-0 text-muted">
+                                        Fale com o <strong>Financeiro</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendário -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold" style="color: #70869f;">📅 Calendário Acadêmico</h5>
+                        <p class="card-text text-muted mt-2">Confira as datas importantes do semestre, como provas, feriados e prazos de matrícula.</p>
+                        <a href="Calendario _Academico_2026.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-auto w-100" style="background-color: #70869f; border-color: #70869f;">Acessar Calendário</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
+    </main>
 
-        <div class="conteúdo">
-            <h3>Horários de Atendimento</h3>
-            <p>Confira os horários de atendimento dos principais setores da faculdade.</p>
-
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1">Centro Universitário Projeção - Campus Taguatinga - QNB 15, LT 15 (3000)</p>
+            <small class="text-muted">Projeto de Extensão desenvolvido por alunos.</small>
         </div>
+    </footer>
 
-        <div class="conteúdo">
-            <h3>Localização dos setores</h3>
-            <p>Confira a localização dos setores da faculdade.</p>
-        </div>
-
-        <div class="conteúdo">
-            <h3>Calendário Acadêmico</h3>
-            <p>Confira o calendário acadêmico da faculdade.</p>
-        </div>
-    </div>
-
+    <!-- Bootstrap JS (Necessário para o Acordeão funcionar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

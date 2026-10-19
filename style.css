@@ -1,13 +1,79 @@
-html {
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-
-}
+/* Importando uma fonte mais moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    background-color: #f4f4f4;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Ajustes finos no acordeão do Bootstrap para ficar mais limpo */
+.accordion-button:not(.collapsed) {
+    color: #70869f;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,0.125);
+}
+
+/* Transição suave nos cards ao passar o mouse (Opcional) */
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- ESTILOS DO CABEÇALHO --- */
+.cabecalho-custom {
+    /* Cria um degradê diagonal usando o seu azul acinzentado e um tom mais escuro */
+    background: linear-gradient(135deg, #70869f 0%, #4a5d73 100%);
+    /* Borda inferior sutil para dar acabamento */
+    border-bottom: 4px solid #3b4a5c;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito decorativo de fundo (círculos desfocados) */
+.cabecalho-custom::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.cabecalho-custom::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -20px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+/* Deixa o texto acima dos círculos decorativos */
+.cabecalho-custom .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo do Título */
+.titulo-principal {
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra no texto para dar destaque */
+}
+
+/* Estilo do Subtítulo */
+.subtitulo {
+    font-weight: 300;
+    opacity: 0.9;
+    font-size: 1.2rem;
 }
